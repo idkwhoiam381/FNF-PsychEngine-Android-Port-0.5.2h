@@ -125,7 +125,6 @@
 	<haxelib name="flixel-addons" />
 	<haxelib name="hscript" />
 	<define name="hscriptPos" />
-	<haxelib name="extension-videoview" if="android"/>
 	<haxelib name="extension-androidtools" if="android"/>
 
 	<!-- make's the game use less ram -->
