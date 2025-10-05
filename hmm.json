@@ -45,7 +45,7 @@
       "name": "extension-androidtools",
       "type": "git",
       "ref": "main",
-      "url": "https://github.com/idkwhoiam381/extension-androidtools"
+      "url": "https://github.com/idkwhoiam381/extension-androidtools-old"
     },
     {
       "name": "linc_luajit",
