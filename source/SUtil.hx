@@ -108,7 +108,7 @@ class SUtil
 		if (!FileSystem.exists(SUtil.getPath() + "crash/"))
 			FileSystem.createDirectory(SUtil.getPath() + "crash/");
 
-		File.saveContent(path, errMsg + "\n");
+		File.saveContent(path, errMsg + "\n";
 		#end
 
 		Sys.println(errMsg);
