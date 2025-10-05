@@ -1,6 +1,6 @@
 package;
 
-#if (android && MODS_ALLOWED)
+#if android
 import android.Tools;
 import android.Permissions;
 import android.PermissionsList;
@@ -24,13 +24,13 @@ using StringTools;
 
 class SUtil
 {
-	#if (android && MODS_ALLOWED)
+	#if android
 	private static var aDir:String = null; // android dir
 	#end
 
 	public static function getPath():String
 	{
-		#if (android && MODS_ALLOWED)
+		#if android
 		if (aDir != null && aDir.length > 0)
 			return aDir;
 		else
@@ -42,7 +42,7 @@ class SUtil
 
 	public static function doTheCheck()
 	{
-		#if (android && MODS_ALLOWED)
+		#if android
 		if (!Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || !Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
 		{
 			Permissions.requestPermissions([PermissionsList.READ_EXTERNAL_STORAGE, PermissionsList.WRITE_EXTERNAL_STORAGE]);
@@ -131,7 +131,7 @@ class SUtil
 	#if android
 	public static function saveContent(fileName:String = 'file', fileExtension:String = '.json', fileData:String = 'you forgot something to add in your code')
 	{
-		#if (android && MODS_ALLOWED)
+		#if android
                 if (!FileSystem.exists(SUtil.getPath() + "saves")){
                         FileSystem.createDirectory(SUtil.getPath() + "saves");
                 }
