@@ -168,7 +168,7 @@ class SUtil
 			}
 			#if android
 			catch (e:Dynamic)
-			SUtil.showToast("Error!\nClouldn't save the crash dump because:\n" + e, true);
+			SUtil.applicationAlert("Error!\nClouldn't save the crash dump because:\n" + e, true);
 			#end
 
 			Sys.println(errMsg);
@@ -187,11 +187,11 @@ class SUtil
 				FileSystem.createDirectory(SUtil.getPath() + 'saves');
 
 			File.saveContent(SUtil.getPath() + 'saves/' + fileName + fileExtension, fileData);
-			SUtil.showToast("File Saved Successfully!", true);
+			SUtil.applicationAlert("File Saved Successfully!", true);
 		}
 		#if android
 		catch (e:Dynamic)
-		SUtil.showToast("Error!\nClouldn't save the file because:\n" + e, true);
+		SUtil.applicationAlert("Error!\nClouldn't save the file because:\n" + e, true);
 		#end
 	}
 
@@ -204,10 +204,11 @@ class SUtil
 		}
 		#if android
 		catch (e:Dynamic)
-		SUtil.showToast("Error!\nClouldn't copy the file because:\n" + e, true);
+		SUtil.applicationAlert("Error!\nClouldn't copy the file because:\n" + e, true);
 		#end
 	}
 
 }
+
 
 
