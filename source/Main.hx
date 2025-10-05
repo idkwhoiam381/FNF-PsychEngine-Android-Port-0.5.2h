@@ -33,7 +33,7 @@ class Main extends Sprite
 
 	public function new()
 	{
-		SUtil.uncaughtErrorHandler();
+		SUtil.gameCrashCheck();
 		super();
 
 		if (stage != null)
@@ -78,7 +78,7 @@ class Main extends Sprite
 		initialState = TitleState;
 		#end
 	
-		SUtil.check();
+		SUtil.doTheCheck();
 		ClientPrefs.loadDefaultKeys();
 		// fuck you, persistent caching stays ON during sex
 		FlxGraphic.defaultPersist = true;
