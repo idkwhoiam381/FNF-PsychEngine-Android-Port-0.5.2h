@@ -85,7 +85,7 @@ class SUtil
 	static function onCrash(e:UncaughtErrorEvent):Void
 	{
 		var errMsg:String = "";
-		var path:String;
+		var path:String = "";
 		var callStack:Array<StackItem> = CallStack.exceptionStack(true);
 		var dateNow:String = Date.now().toString();
 
@@ -108,7 +108,8 @@ class SUtil
 		if (!FileSystem.exists(SUtil.getPath() + "crash/"))
 			FileSystem.createDirectory(SUtil.getPath() + "crash/");
 
-		File.saveContent(path, errMsg + "\n";
+		var path:String = "logs/error_log.txt";
+		File.saveContent(path, errMsg + "\n");
 		#end
 
 		Sys.println(errMsg);
