@@ -7,6 +7,7 @@ import android.PermissionsList;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Environment;
+import android.content.Context;
 import android.widget.Toast;
 #end
 import flash.system.System;
@@ -167,7 +168,7 @@ class SUtil
 			}
 			#if android
 			catch (e:Dynamic)
-			Hardware.toast("Error!\nClouldn't save the crash dump because:\n" + e, ToastType.LENGTH_LONG);
+			SUtil.showToast("Error!\nClouldn't save the crash dump because:\n" + e, true);
 			#end
 
 			Sys.println(errMsg);
@@ -186,11 +187,11 @@ class SUtil
 				FileSystem.createDirectory(SUtil.getPath() + 'saves');
 
 			File.saveContent(SUtil.getPath() + 'saves/' + fileName + fileExtension, fileData);
-			Hardware.toast("File Saved Successfully!", ToastType.LENGTH_LONG);
+			SUtil.showToast("File Saved Successfully!", true);
 		}
 		#if android
 		catch (e:Dynamic)
-		Hardware.toast("Error!\nClouldn't save the file because:\n" + e, ToastType.LENGTH_LONG);
+		SUtil.showToast("Error!\nClouldn't save the file because:\n" + e, true);
 		#end
 	}
 
@@ -203,9 +204,10 @@ class SUtil
 		}
 		#if android
 		catch (e:Dynamic)
-		Hardware.toast("Error!\nClouldn't copy the file because:\n" + e, ToastType.LENGTH_LONG);
+		SUtil.showToast("Error!\nClouldn't copy the file because:\n" + e, true);
 		#end
 	}
 
 }
+
 
