@@ -7,6 +7,7 @@ import android.PermissionsList;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Environment;
+import android.widget.Toast;
 #end
 import flash.system.System;
 import flixel.FlxG;
@@ -207,3 +208,4 @@ class SUtil
 	}
 
 }
+
